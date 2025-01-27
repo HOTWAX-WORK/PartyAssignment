@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        require-authentication="anonymous-all">
+
+    <transition name="createTutorial">
+        <service-call name="create#assignment.Party"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createPerson">
+        <service-call name="create#assignment.Person"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createOrg">
+        <service-call name="create#assignment.Organization"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createRole">
+        <service-call name="create#assignment.PartyRole"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createCM">
+        <service-call name="create#assignment.ContactMech"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createPostalAddress">
+        <service-call name="create#assignment.PostalAddress"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createPostalAddress">
+        <service-call name="create#assignment.PostalAddress"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createTN">
+        <service-call name="create#assignment.TelecomNumber"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="createPartyContactMech">
+        <service-call name="create#assignment.PartyContactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+
+
+    <widgets>
+
+        <label type="h1" text="Hello User!"/>
+        <container-dialog id="CreateTutorialDialog" button-text="Create Tutorial">
+            <form-single name="CreateTutorial" transition="createTutorial">
+                <auto-fields-entity entity-name="assignment.Party" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreatePersonDialog" button-text="Create Person">
+            <form-single name="CreatePerson" transition="createPerson">
+                <auto-fields-entity entity-name="assignment.Person" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="CreateOrgDialog" button-text="Create Org">
+            <form-single name="CreateOrg" transition="createOrg">
+                <auto-fields-entity entity-name="assignment.Organization" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="createRole" button-text="create Role">
+            <form-single name="CreateRole" transition="createRole">
+                <auto-fields-entity entity-name="assignment.PartyRole" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="createCM" button-text="create CM">
+            <form-single name="CreateCM" transition="createCM">
+                <auto-fields-entity entity-name="assignment.ContactMech" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="createPostalAddress" button-text="create PostalAddress">
+            <form-single name="CreatePostalAddress" transition="createPostalAddress">
+                <auto-fields-entity entity-name="assignment.PostalAddress" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="createTN" button-text="create TN">
+            <form-single name="CreateTN" transition="createTN">
+                <auto-fields-entity entity-name="assignment.TelecomNumber" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+        <container-dialog id="createPartyContactMech" button-text="createPartyContactMech">
+            <form-single name="CreatePartyContactMech" transition="createPartyContactMech">
+                <auto-fields-entity entity-name="assignment.PartyContactMech" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+
+
+    </widgets>
+</screen>
